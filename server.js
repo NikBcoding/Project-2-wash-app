@@ -4,13 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
-
-var logger = require('morgan');
 var methodOverride = require('method-override');
+var logger = require('morgan');
+
 
 //load the env vars
 require('dotenv').config();
 
+//connect to the MongoDB with mongoose
+require('./config/databse');
+//configure passport
+require('./config/passport');
+
+
+//require our routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
