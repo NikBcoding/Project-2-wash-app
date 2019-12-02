@@ -27,7 +27,7 @@ var carSchema = new Schema({
 
 });
 
-var userSchema = new Schema({
+var clientSchema = new Schema({
     name: String,
     email: String,
     phoneNum: Number,
@@ -38,4 +38,4 @@ var userSchema = new Schema({
     cars: [carSchema]
 });
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('Client',clientSchema)

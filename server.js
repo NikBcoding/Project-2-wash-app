@@ -15,14 +15,14 @@ require('dotenv').config();
 var app = express();
 
 //connect to the MongoDB with mongoose
-require('./config/databse');
+require('./config/database');
 //configure passport
 require('./config/passport');
 
 
 //require our routes
 var indexRoutes = require('./routes/index');
-var usersRoutes = require('./routes/users');
+var clientsRoutes = require('./routes/clients');
 
 
 // view engine setup
@@ -45,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRoutes);
-app.use('/', usersRoutes);
+app.use('/', clientsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
