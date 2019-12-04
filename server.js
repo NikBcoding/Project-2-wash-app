@@ -23,6 +23,7 @@ require('./config/passport');
 //require our routes
 var indexRoutes = require('./routes/index');
 var clientsRoutes = require('./routes/clients');
+var carsRoutes = require('./routes/cars');
 
 
 // view engine setup
@@ -45,7 +46,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRoutes);
-app.use('/', clientsRoutes);
+app.use('/client', clientsRoutes);
+app.use('/cars', carsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

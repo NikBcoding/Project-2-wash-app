@@ -10,13 +10,6 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/clients', function(req, res){
-  res.render('client', {
-    title: "Client Page",
-    user: req.user
-  })
-})
-
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -27,7 +20,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/clients',
+    successRedirect: '/client',
     failureRedirect: '/'
   }
 ));

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A.B.C.</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h2>Enter Your Vehicle</h2>
+  <form action="/cars" method="POST">
+    <label>Year:
+      <input type="number" name="year">
+    </label><br>
+    <label>Make:
+      <input type="text" name="make">
+    </label><br>
+    <label>Model:
+      <input type="text" name="model">
+    </label><br>
+    <label>Color:
+      <input type="text" name="color">
+    </label><br>
+    <label>Type of Vehicle:
+      <!-- <select name="typeOfVehicle">
+        <option value="">select-type</option>
+        <option value="Coupe">Coupe</option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Truck">Truck</option>
+        <option value="Van">Van</option>
+      </select> -->
+    </label>
+    <label><br>
+      <button type="submit">Add Car
+      </button>
+    </label>  
+  </form>
+</body>
+
+</html>
