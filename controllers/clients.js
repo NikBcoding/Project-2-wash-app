@@ -1,4 +1,5 @@
-// const Client = require ('../models/client');
+const Client = require ('../models/client');
+const Car = require('../models/car')
 // const Request = require('../models/request');
 
 module.exports = {
@@ -7,10 +8,10 @@ module.exports = {
 
 
 function index(req, res) {
-    res.render('client', {
-        name: req.user.name, 
-        user: req.user,
-        client: req.user,
+    Car.find({client: req.user}, function(err, cars){
+        res.render('client', {
+            cars,
+            user: req.user
+        })
     })
 }
-    

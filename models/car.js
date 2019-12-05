@@ -8,11 +8,11 @@ var carSchema = new Schema({
     year: String,
     make: {
         type: String,
-        // require: true
+        required: true
     },
     model: {
         type: String,
-        // require: true
+        required: true
     },
     color: {
         type: String
@@ -20,8 +20,12 @@ var carSchema = new Schema({
     typeOfVehicle: {
         type: String,
         enum: ['Coupe', 'Sedan', 'SUV', 'Truck', 'Van'],
-        // require: true
+        required: true
     },
+    client: {
+        type: Schema.Types.ObjectId,
+        ref: "Client"
+    }
 });
 
 module.exports = mongoose.model('Car',carSchema)

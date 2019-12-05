@@ -9,6 +9,10 @@ var clientSchema = new Schema({
     email: String,
     phoneNum: Number,
     googleId: String,
+    // cars: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Cars'
+    // }]
 }, {
     timestamps: true 
 });
