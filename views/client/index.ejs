@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,73 +9,75 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <% if(user){ %>
-  <a href="/logout">Log Out</a>
-  <h1>Welcome to Auto Buddy Wash <%= user.name %>!</h1>
+<a href="/logout">Log Out</a>
+<h1>Welcome to Auto Buddy Clean <%= user.name %>!</h1>
 
 
-  <a href="/cars/new">Add a car</a>
-  <body>
-    <h2>My Vehicles</h2>
-    <table>
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Color</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-            <% cars.forEach(function(car) { %>
-              <tr>
-                <td><%= car.year %></td>
-                <td><%= car.make %></td>
-                <td><%= car.model %></td>
-                <td><%= car.color %></td>
-                <td><%= car.typeOfVehicle %></td>
-                <td><a class="carEdit" href="/cars/<%= car._id %>/edit">Edit Car</a></td>
-                <td><a class="requestService" href="/cars/<%= car._id %>/requests/new">Request Service</a></td>
-              </tr>
-            <% }); %>
-        </tbody>
-        <thead>
-            <tr>
-              <th>Location</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Wash $20</th>
-              <th>Interior Vacuum $10</th>
-              <th>Trunk Vacuum $5</th>
-              <th>Rim Detail $15</th>
-              <th>Engine Bay Detail $80</th>
-              <th>Upholstery Detail $100</th>
-              <th>Comment</th>
-            </tr>
-          </thead>
-          <tbody>
-              <% requests.forEach(function(request) { %>
-                <tr>
-                  <td><%= request.serviceLocation %></td>
-                  <td><%= request.serviceDate.toLocaleDateString() %></td>
-                  <td><%= request.time %></td>
-                  <td><%= request.wash %></td>
-                  <td><%= request.intVac %></td>
-                  <td><%= request.trunkVac %></td>
-                  <td><%= request.rimDet %></td>
-                  <td><%= request.engineBayDet %></td>
-                  <td><%= request.upholDet %></td>
-                  <td><%= request.comments %></td>
-                  <td><a class="editService" href="/requests/<%= request._id %>/edit">Edit Request</a></td>
-                </tr>
-              <% }); %>
-          </tbody>
-    </table>
+<a href="/cars/new">Add a car</a>
 
-  </body>
-  
+<body>
+  <h2>My Vehicles</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cars.forEach(function(car) { %>
+      <tr>
+        <td><%= car.year %></td>
+        <td><%= car.make %></td>
+        <td><%= car.model %></td>
+        <td><%= car.color %></td>
+        <td><%= car.typeOfVehicle %></td>
+        <td><a class="carEdit" href="/cars/<%= car._id %>/edit">Edit Car</a></td>
+        <td><a class="requestService" href="/cars/<%= car._id %>/requests/new">Request Service</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Wash $20</th>
+        <th>Interior Vacuum $10</th>
+        <th>Trunk Vacuum $5</th>
+        <th>Rim Detail $15</th>
+        <th>Engine Bay Detail $80</th>
+        <th>Upholstery Detail $100</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% requests.forEach(function(request) { %>
+      <tr>
+        <td><%= request.serviceLocation %></td>
+        <td><%= request.serviceDate.toLocaleDateString() %></td>
+        <td><%= request.time %></td>
+        <td><%= request.wash %></td>
+        <td><%= request.intVac %></td>
+        <td><%= request.trunkVac %></td>
+        <td><%= request.rimDet %></td>
+        <td><%= request.engineBayDet %></td>
+        <td><%= request.upholDet %></td>
+        <td><%= request.comments %></td>
+        <td><a class="editService" href="/requests/<%= request._id %>/edit">Edit Request</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+</body>
+
 <% } else { %>
 <p>please <a href="/">log in</a> to continue</p>
 <% } %>
+<img src="images/carpic.png" alt="cartooncar">
 
 </html>

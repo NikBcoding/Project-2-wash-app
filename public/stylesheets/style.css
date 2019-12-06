@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+
+img {
+  position: absolute;
+  height: 100%;
+}
+h1 {
+  text-align: center;
+  color: darkgoldenrod;
+}
+p {
+  text-align: center;
+  font-size: 28px;
+}
+
+button {
+  color:yellow;
+  background: black;
+}
