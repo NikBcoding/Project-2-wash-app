@@ -6,7 +6,9 @@ module.exports = {
   new: newCar,
   create,
   index,
-  editCar
+  editCar,
+  update,
+  delete: deleteCar
 }
 
 
@@ -31,9 +33,19 @@ function index(req, res) {
 
 function editCar(req, res) {
   Car.findById(req.params.id, function(err, car) {
-    client.car.push(req.user._id);
-    client.save(function(err) {
-      res.redirect('/cars/:id/new');
-    })
+    res.render('cars/edit', {
+      car
+    });
+  })
+}
+
+function update(req,res) {
+  Car.findByIdAndUpdate(req.params.id, req.body)
+  .then(res.redirect('/client'))
+}
+
+function deleteCar(req, res) {
+  Car.deleteOne({'_id':req.params.id}, function(err, car) {
+    res.redirect('/client')
   })
 }

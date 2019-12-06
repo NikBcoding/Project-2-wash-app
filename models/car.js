@@ -25,7 +25,8 @@ var carSchema = new Schema({
     client: {
         type: Schema.Types.ObjectId,
         ref: "Client"
-    }
+    },
+
 });
 
 module.exports = mongoose.model('Car',carSchema)

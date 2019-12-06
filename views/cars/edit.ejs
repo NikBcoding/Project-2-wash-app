@@ -10,23 +10,23 @@
 </head>
 
 <body>
-  <h2>Enter Your Car</h2>
-  <form action="/cars" method="POST">
+  <h1>Edit Your Car</h1>
+  <form action="/cars/<%= car._id %>" method="POST">
     <label>Year:
-      <input type="number" name="year">
+      <input type="number" name="year" value='<%= car.year %>'>
     </label><br>
     <label>Make:
-      <input type="text" name="make">
+      <input type="text" name="make" value='<%= car.make %>'>
     </label><br>
     <label>Model:
-      <input type="text" name="model">
+      <input type="text" name="model" value='<%= car.model %>'>
     </label><br>
     <label>Color:
-      <input type="text" name="color">
+      <input type="text" name="color" value='<%= car.color %>'>
     </label><br>
     <label>Type of Vehicle:
       <select name="typeOfVehicle">
-        <option value="">select-type</option>
+        <option value="<%= car.typeOfVehicle %>" disabled selected hidden><%= car.typeOfVehicle %></option>
         <option value="Coupe">Coupe</option>
         <option value="Sedan">Sedan</option>
         <option value="SUV">SUV</option>
@@ -35,10 +35,13 @@
       </select>
     </label>
     <label><br>
-      <button type="submit">Add Car
-      </button>
-    </label>  
+    </label>
+    <button type="submit">Save</button>
+
   </form>
+  <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete</button>
+</form>
   <a href="/client">Cancel</a>
 </body>
 
