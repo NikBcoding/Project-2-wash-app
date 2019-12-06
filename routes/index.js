@@ -2,9 +2,9 @@ var router = require('express').Router();
 var passport = require('passport');
 
 // The root route renders our only view
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   res.render('index', {
-    title:'A.B.C.',
+    title: 'A.B.C.',
     user: req.user,
     // name: req.query.name,
   });
@@ -26,7 +26,7 @@ router.get('/oauth2callback', passport.authenticate(
 ));
 
 // OAuth logout route
-router.get('/logout', function(req, res) {
+router.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
