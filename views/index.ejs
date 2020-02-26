@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<img src="images/carpic.png" alt="cartooncar">
+
 
 <head>
   <title><%= title %></title>
@@ -7,18 +9,23 @@
 </head>
 
 <body>
-  <ul class="right">
-    <li>
-      <% if (user) { %>
-      <a href="/logout">Log Out</a>
-      <% } else { %>
-      <a href="/auth/google">Login with Google</a>
-      <% } %>
-    </li>
-  </ul>
-  <h1><%= title %></h1>
-  <p>A.uto B.uddy C.lean </p>
+  <h1><%= title %> A.uto B.uddy C.are</h1>
+  <nav>
+    <ul class="right">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li style="float:right" class="login">
+        <% if (user) { %>
+        <a href="/logout">Log Out</a>
+        <% } else { %>
+        <a href="/auth/google">Login/Sign up</a>
+        <% } %>
+      </li>
+    </ul>
+  </nav>
 </body>
-<img src="images/carpic.png" alt="cartooncar">
+<!-- <img src="images/carpic.png" alt="cartooncar"> -->
 
 </html>
